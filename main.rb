@@ -50,11 +50,6 @@ end
 # Make a move
 def move(board, index, player)
   board[index] = player
-  if player == 'X'
-    puts yellow_color("Player 2 your move")
-  else
-    puts yellow_color("Player 1 your move")
-  end
 end
 
 # validate a square that’s already taken
@@ -88,8 +83,8 @@ def current_players(position)
     puts yellow_color("Player 2 plays O position")
     ['X', 'O']
   elsif position == 'O'
-    puts yellow_color("Player 2 plays O position")
-    puts yellow_color("Player 1 plays X position")    
+    puts yellow_color("Player 1 plays O position")
+    puts yellow_color("Player 2 plays X position")    
     ['O', 'X']
   else
     puts red_color("Invalid choice. Please choose 'X' or 'O'. \u{1f344}")
@@ -104,12 +99,28 @@ def turn(board, current_player)
   index = convert_input(user_input)   # converted it
 
   if valid_move?(board, index)         # check is it valid?
-    # move(board, index, current_player)
-    display_board(board)
     move(board, index, current_player)
+    display_board(board)
+    if current_player == 'X'
+      puts
+      puts yellow_color("Player 2 your move")
+      puts
+    else
+      puts
+      puts yellow_color("Player 1 your move")
+      puts
+    end
   else
     puts red_color('You gave a wrong position move, only 1 to 9 ' + "\u{1f344}")
     turn(board, current_player)
+  end
+end
+
+def won?(board)
+  WIN_COMBINATIONS.detect do |win_combo|
+    board[win_combo[0]] == board[win_combo[1]] &&
+    board[win_combo[1]] == board[win_combo[2]] &&
+    position_taken?(board, win_combo[0])
   end
 end
 
@@ -133,14 +144,6 @@ end
 
 def over?(board)
   won?(board) || draw?(board)
-end
-
-def won?(board)
-  WIN_COMBINATIONS.detect do |win_combo|
-    board[win_combo[0]] == board[win_combo[1]] &&
-    board[win_combo[1]] == board[win_combo[2]] &&
-    position_taken?(board, win_combo[0])
-  end
 end
 
 # Announcing the winner
