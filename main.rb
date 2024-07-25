@@ -57,3 +57,12 @@ def move(board, index, player)
   end
 end
 
+# validate a square that’s already taken
+def position_taken?(board, index)
+  if (board[index] == ' ') || (board[index] == '') || board[index].nil?
+    return false 
+  else
+    return true   # cuz position is taken by x || o - not empty String "" || " ", and not nil
+  end
+end
+
