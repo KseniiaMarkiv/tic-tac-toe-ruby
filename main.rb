@@ -42,3 +42,18 @@ def display_board(board)
   puts blue_color(" #{board[6]}") + ' | ' + blue_color("#{board[7]}") + ' | ' + blue_color("#{board[8]} ")
 end
 
+# To convert the user input
+def convert_input(user_input)
+  user_input.to_i - 1
+end
+
+# Make a move
+def move(board, index, player)
+  board[index] = player
+  if player == 'X'
+    puts yellow_color("Player 2 your move")
+  else
+    puts yellow_color("Player 1 your move")
+  end
+end
+
