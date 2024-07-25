@@ -1,7 +1,10 @@
 # Ruby Tic-Tac-Toe Game
 
 This is a command-line Tic-Tac-Toe game implemented in Ruby, using the 'colorize' gem for enhanced color-coded output. The game supports two players who take turns selecting positions on a 3x3 board, aiming to align three of their marks (either 'X' or 'O') in a row, column, or diagonal. The game includes features to validate moves, detect wins and draws, and prompt for replay.
-
+> [!NOTE]
+> in the next couple of months, I will implement this project on Ruby on Rails.
+> 
+> and will put a link here
 ----------------------------------
 ## Table of Contents
 
@@ -81,5 +84,5 @@ Here is a snippet of how the game might look during play:
 ![alt text](https://github.com/KseniiaMarkiv/tic-tac-toe-ruby/blob/main/example_game_output.png?raw=true)
 
 ## Acknowledgments
-
-- Thanks to the creators of the 'colorize' gem for making terminal output more colorful and engaging.
+> [!IMPORTANT]
+> Thanks to the creators of the 'colorize' gem for making terminal output more colorful and engaging.
