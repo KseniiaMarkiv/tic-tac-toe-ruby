@@ -66,3 +66,18 @@ def position_taken?(board, index)
   end
 end
 
+# we validate the user’s input 
+def valid_move?(board, index)
+  index.between?(0, 8) && !position_taken?(board, index)
+end
+
+def choose_position
+  puts 'Choose your position X or O:'
+  position = gets.chomp.upcase
+  until %w[X O].include?(position)
+    puts red_color('Invalid input. Please enter a valid string of X or O ' + "\u{1f344}")
+    position = gets.chomp.upcase
+  end
+  position
+end
+
