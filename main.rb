@@ -81,3 +81,20 @@ def choose_position
   position
 end
 
+# Assign positions to current players
+def current_players(position)
+  if position == 'X'
+    puts yellow_color("Player 1 plays X position")
+    puts yellow_color("Player 2 plays O position")
+    ['X', 'O']
+  elsif position == 'O'
+    puts yellow_color("Player 2 plays O position")
+    puts yellow_color("Player 1 plays X position")    
+    ['O', 'X']
+  else
+    puts red_color("Invalid choice. Please choose 'X' or 'O'. \u{1f344}")
+    choose_position
+  end
+end
+
+
