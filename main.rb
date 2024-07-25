@@ -98,3 +98,17 @@ def current_players(position)
 end
 
 
+def turn(board, current_player)
+  puts 'Please a number enter 1-9:'
+  user_input = gets.chomp # got a move from User
+  index = convert_input(user_input)   # converted it
+
+  if valid_move?(board, index)         # check is it valid?
+    # move(board, index, current_player)
+    display_board(board)
+    move(board, index, current_player)
+  else
+    puts red_color('You gave a wrong position move, only 1 to 9 ' + "\u{1f344}")
+    turn(board, current_player)
+  end
+end
