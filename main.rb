@@ -112,3 +112,84 @@ def turn(board, current_player)
     turn(board, current_player)
   end
 end
+
+# filled board out or "x" or "o"
+def full?(board)
+  board.all? { |space| space == "X" || space == "O" }
+end
+
+# define what a tied game/board is.
+def draw?(board)
+  if !won?(board) && full?(board) # Board is full and there’s no winner
+    true
+  elsif !won?(board) && !full?(board) # Board is not full and there’s no winner
+    false
+  else won?(board) # There’s a winner, despite the board being empty or full
+    false
+  end
+end
+
+# If the game is tied or there’s a winner, let’s end the game.
+
+def over?(board)
+  won?(board) || draw?(board)
+end
+
+def won?(board)
+  WIN_COMBINATIONS.detect do |win_combo|
+    board[win_combo[0]] == board[win_combo[1]] &&
+    board[win_combo[1]] == board[win_combo[2]] &&
+    position_taken?(board, win_combo[0])
+  end
+end
+
+# Announcing the winner
+def winner(board)
+  if won?(board)
+    board[won?(board)[0]]
+  end
+end
+
+def draw_result
+  loop do
+    puts 'Play again?'
+    answer = gets.chomp.downcase
+
+    case answer
+    when 'yes', 'y'
+      board = initialize_board
+      play(board)
+      break
+    when 'no', 'n'
+      puts green_color('Thank you for playing! ' + "\u{1f60e}")
+      break
+    else  
+      puts red_color('Invalid choice. Please choose yes/y or no/n ' + "\u{1f344}")
+    end  
+  end
+end
+
+
+def play(board)
+  display_board(board)
+  position = choose_position
+  players = current_players(position)
+  player_one = players[0]
+  player_two = players[1]
+
+  until over?(board)
+    turn(board, player_one)
+    break if over?(board)
+    turn(board, player_two)
+  end
+
+  if won?(board)
+    puts red_color("Congratulations #{winner(board)}!")
+  elsif draw?(board)
+    puts gray_color("Cats Game!") 
+  end
+  draw_result
+end
+
+board = initialize_board
+play(board)
