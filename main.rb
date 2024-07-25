@@ -33,3 +33,12 @@ end
 def initialize_board
   Array.new(9, ' ')
 end
+
+def display_board(board)
+  puts blue_color(" #{board[0]}") + ' | ' + blue_color("#{board[1]}") + ' | ' + blue_color("#{board[2]} ")
+  puts '-----------'
+  puts blue_color(" #{board[3]}") + ' | ' + blue_color("#{board[4]}") + ' | ' + blue_color("#{board[5]} ")
+  puts '-----------'
+  puts blue_color(" #{board[6]}") + ' | ' + blue_color("#{board[7]}") + ' | ' + blue_color("#{board[8]} ")
+end
+
