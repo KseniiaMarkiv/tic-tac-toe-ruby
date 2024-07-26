@@ -14,6 +14,7 @@ This is a command-line Tic-Tac-Toe game implemented in Ruby, using the 'colorize
 - [Code Overview](#code-overview)
 - [Example](#example)
 - [Acknowledgments](#acknowledgments)
+- [Refactoring process](#refactoring-process)
 
 
 ## Installation
@@ -86,3 +87,8 @@ Here is a snippet of how the game might look during play:
 ## Acknowledgments
 > [!IMPORTANT]
 > Thanks to the creators of the 'colorize' gem for making terminal output more colorful and engaging.
+
+---------------------------------------
+## Refactoring process
+
+[Link of details about the refactoring process](https://github.com/KseniiaMarkiv/tic-tac-toe-ruby/tree/oop?tab=readme-ov-file#refactoring-process)
