@@ -75,35 +75,35 @@ This is a command-line Tic-Tac-Toe game implemented in Ruby, using the 'colorize
 
 ### Methods Overview
 
-- Board Class
+- **Board Class**
 
-- `initialize`: Initializes an empty 3x3 board.
-- `display_board`: Displays the current state of the board with color-coded output.
-- `position_taken?`: Checks if a position on the board is already taken.
-- `valid_move?`: Validates if a move is within the board and the position is not taken.
-- `move`: Updates the board with the player's move.
-- `full?`: Checks if the board is full.
-- `won?`: Checks if there's a winning combination on the board.
-- `draw?`: Checks if the game is a draw.
-- `over?`: Determines if the game is over (win or draw).
-- `winner:` Announces the winner if there's a winning combination.
+    - `initialize`: Initializes an empty 3x3 board.
+    - `display_board`: Displays the current state of the board with color-coded output.
+    - `position_taken?`: Checks if a position on the board is already taken.
+    - `valid_move?`: Validates if a move is within the board and the position is not taken.
+    - `move`: Updates the board with the player's move.
+    - `full?`: Checks if the board is full.
+    - `won?`: Checks if there's a winning combination on the board.
+    - `draw?`: Checks if the game is a draw.
+    - `over?`: Determines if the game is over (win or draw).
+    - `winner:` Announces the winner if there's a winning combination.
 
-- Player Class 
+- **Player Class**
 
-- `initialize`: Initializes a player with a marker ('X' or 'O').
+    - `initialize`: Initializes a player with a marker ('X' or 'O').
 
-- Game Class 
+- **Game Class**
 
-- `initialize`: Initializes the game with a board and players.
-- `play`: Main game loop that manages the game flow.
-- `choose_position`: Prompts the player to choose their marker.
-- `assign_positions`: Assigns markers to the players based on the chosen position.
-- `take_turn`: Manages the player's turn, validates the move, updates the board, and prompts the next player.
-- `convert_input`: Converts user input to the corresponding board index.
-- `display_turn_message`: Displays whose turn it is next.
-- `switch_players`: Switches the current player.
-- `display_result`: Displays the result of the game (win or draw).
-- `play_again`?: Prompts the players to play again or exit.
+    - `initialize`: Initializes the game with a board and players.
+    - `play`: Main game loop that manages the game flow.
+    - `choose_position`: Prompts the player to choose their marker.
+    - `assign_positions`: Assigns markers to the players based on the chosen position.
+    - `take_turn`: Manages the player's turn, validates the move, updates the board, and prompts the next player.
+    - `convert_input`: Converts user input to the corresponding board index.
+    - `display_turn_message`: Displays whose turn it is next.
+    - `switch_players`: Switches the current player.
+    - `display_result`: Displays the result of the game (win or draw).
+    - `play_again`?: Prompts the players to play again or exit.
 
 ### Colorize Helper and Symbols Modules
 
