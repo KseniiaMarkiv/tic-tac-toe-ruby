@@ -12,11 +12,11 @@ class Board
   end
 
   def display_board
-    puts blue_color(" #{cells[0]}") + ' | ' + blue_color("#{cells[1]}") + ' | ' + blue_color("#{cells[2]} ")
+    puts ColorizeHelper.blue_color(" #{cells[0]}") + ' | ' + ColorizeHelper.blue_color("#{cells[1]}") + ' | ' + ColorizeHelper.blue_color("#{cells[2]} ")
     puts '-----------'
-    puts blue_color(" #{cells[3]}") + ' | ' + blue_color("#{cells[4]}") + ' | ' + blue_color("#{cells[5]} ")
+    puts ColorizeHelper.blue_color(" #{cells[3]}") + ' | ' + ColorizeHelper.blue_color("#{cells[4]}") + ' | ' + ColorizeHelper.blue_color("#{cells[5]} ")
     puts '-----------'
-    puts blue_color(" #{cells[6]}") + ' | ' + blue_color("#{cells[7]}") + ' | ' + blue_color("#{cells[8]} ")
+    puts ColorizeHelper.blue_color(" #{cells[6]}") + ' | ' + ColorizeHelper.blue_color("#{cells[7]}") + ' | ' + ColorizeHelper.blue_color("#{cells[8]} ")
   end
 
   def position_taken?(index)
